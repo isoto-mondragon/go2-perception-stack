@@ -1,0 +1,12 @@
+# Dependencias Python de los scripts de este repo.
+# Nota: torch, mujoco, mjlab, rsl_rl se instalan desde unitree_rl_mjlab
+# (con su `pip install -e .` y los fixes de mujoco-warp/warp-lang).
+# Aqui solo las que NO trae mjlab.
+
+ultralytics>=8.0.0      # YOLOv8
+opencv-python>=4.8.0    # webcam + display
+numpy>=1.24             # ya viene con mjlab pero por si acaso
+
+# DDS / Unitree SDK: se instala desde el clon local
+# (no por pip, ver docs/INSTALL.md)
+# unitree_sdk2py  →  pip install -e ~/robotics/unitree_sdk2_python

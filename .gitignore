@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.venv/
+.venv_rl/
+venv/
+
+# Modelos (pesados, no se versionan)
+*.pt
+*.onnx
+*.onnx.data
+*.pth
+models/*.pt
+models/*.onnx
+
+# YOLO ultralytics descarga modelos en el cwd
+yolov8n.pt
+yolov8s.pt
+yolov8m.pt
+yolov8l.pt
+yolov8x.pt
+*.engine
+
+# OpenCV / vídeo
+*.mp4
+*.avi
+*.mkv
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Build artifacts (por si en algún momento se sube algo de C++)
+build/
+build_debug/
+*.o
+*.a
+
+# Logs
+*.log
+logs/
+
+# Sistema
+.directory
+Thumbs.db
+
+# Datos locales / personales
+examples/mis_movimientos.py
+examples/*_personal.py

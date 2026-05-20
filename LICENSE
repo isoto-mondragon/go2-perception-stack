@@ -1,0 +1,26 @@
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+   Copyright 2026
+
+   Project derived from / inspired by:
+   - unitree_rl_mjlab (Apache-2.0) — https://github.com/unitreerobotics/unitree_rl_mjlab
+   - mjlab (Apache-2.0)            — https://github.com/mujocolab/mjlab
+   - Unitree SDK2 (BSD-3-Clause)   — https://github.com/unitreerobotics/unitree_sdk2
+   - YOLOv8 / Ultralytics (AGPL-3.0) — https://github.com/ultralytics/ultralytics
+
+   Note: if you ship products including YOLOv8, you may need to comply
+   with AGPL-3.0 separately. Educational use is fine.
