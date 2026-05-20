@@ -92,7 +92,7 @@ cd ~/robotics/rl_workspace/unitree_rl_mjlab
 
 ```bash
 cd ~/robotics/rl_workspace/unitree_rl_mjlab
-git clone https://github.com/<TU_USUARIO>/go2-perception-stack.git stack
+git clone https://github.com/isoto-mondragon/go2-perception-stack.git stack
 
 # Copiar nuestros tools/examples encima de los del repo mjlab
 cp -r stack/tools/* tools/

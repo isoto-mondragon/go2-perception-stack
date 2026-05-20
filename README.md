@@ -64,7 +64,7 @@ expuesto vía la SDK oficial de Unitree.
 
 ```bash
 cd ~/robotics/rl_workspace/unitree_rl_mjlab
-git clone https://github.com/<TU_USUARIO>/go2-perception-stack.git stack
+git clone https://github.com/isoto-mondragon/go2-perception-stack.git stack
 # luego copia las carpetas tools/ y examples/ encima del repo de mjlab:
 cp -r stack/tools/* tools/
 cp -r stack/examples/* examples/
