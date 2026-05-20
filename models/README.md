@@ -9,8 +9,7 @@ Dos formas:
 ### A) Entrenando tú mismo
 
 Abre `notebooks/train_go2_velocity.ipynb` en Google Colab con runtime
-T4 GPU. Ejecuta de arriba a abajo. Para cuando `Train/mean_reward > 65`
-(~3000–5000 iteraciones, 1.5–2h). Descarga el último `model_XXXX.pt`
+T4 GPU. Ejecuta de arriba a abajo. Para cuando `Train/mean_reward > 55`. Descarga el último `model_XXXX.pt`
 desde `Drive/MyDrive/go2_rl/exports/...` y guárdalo aquí.
 
 ### B) Pre-entrenado
