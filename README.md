@@ -135,6 +135,14 @@ dog = Go2Controller(mode="sim", network="lo")
 dog = Go2Controller(mode="real", network="enp5s0")
 ```
 
+> ⚠️ **Importante** — En `mode="real"` la locomoción la realiza el firmware
+> **Sport Mode** del Go2, NO tu `.pt` entrenado. Tu policy se usa en sim
+> para iterar la lógica; en real, Sport Mode (rock-solid) ejecuta los
+> comandos de velocidad. Esto es **lo deseable** para la mayoría de
+> proyectos. Si quieres demostrar **sim2real puro** (tu `.pt` controlando
+> los motores físicos directamente), ver el apéndice en
+> [docs/SIM_TO_REAL.md](docs/SIM_TO_REAL.md#apéndice-añadir-un-backend-lowlevel-futuro).
+
 Ver [docs/SIM_TO_REAL.md](docs/SIM_TO_REAL.md) para el procedimiento completo
 (red, comprobaciones, test mínimo seguro).
 
