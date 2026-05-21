@@ -94,8 +94,12 @@ cd ~/robotics/rl_workspace/unitree_rl_mjlab
 cd ~/robotics/rl_workspace/unitree_rl_mjlab
 git clone https://github.com/isoto-mondragon/go2-perception-stack.git stack
 
-# Copiar nuestros tools/examples encima de los del repo mjlab
-cp -r stack/tools/* tools/
+# unitree_rl_mjlab NO trae carpetas tools/ ni examples/ por defecto,
+# las creamos antes de copiar:
+mkdir -p tools examples
+
+# Copiar nuestros tools/examples al repo de mjlab
+cp -r stack/tools/*    tools/
 cp -r stack/examples/* examples/
 ```
 
