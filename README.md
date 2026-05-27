@@ -6,7 +6,6 @@
 > de percepción (seguimiento, vigilancia, búsqueda) tanto en **simulación**
 > como en el **robot físico**.
 
-![arquitectura](docs/arch.png)
 
 ---
 
