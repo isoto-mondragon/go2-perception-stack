@@ -197,7 +197,7 @@ python tools/teleop_wireless.py --network=lo --max-lin 1.0 --max-ang 1.0
 
 Pulsa `Shift+W` → el perro debe avanzar. `Q`/`E` → girar. `ESPACIO` → parar.
 
-✅ Si llegas hasta aquí, la instalación está completa.
+Si llegas hasta aquí, la instalación está completa.
 
 ---
 

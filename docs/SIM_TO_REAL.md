@@ -4,7 +4,7 @@ Cómo desplegar tu aplicación (la que probaste en simulador) en el Go2 físico.
 
 ---
 
-## ⚠️ Lectura previa OBLIGATORIA: dos enfoques de "real"
+## Lectura previa OBLIGATORIA: dos enfoques de "real"
 
 Hay **dos formas distintas** de hacer que el Go2 físico ejecute tu app, y
 es importante entender la diferencia antes de seguir.
@@ -30,10 +30,10 @@ decisión), pero la **locomoción** la hace el firmware.
 
 | Ventajas | Limitaciones |
 |---|---|
-| ✅ **Rock-solid**: el perro no se cae bajo comandos razonables | ❌ No es "sim2real" estricto: el `.pt` no llega al hardware |
-| ✅ Setup mínimo: cable Ethernet y enchufar el perro | ❌ Limitado a lo que Sport Mode expone (vx, vy, wz, StandUp, Sit, gestos predefinidos) |
-| ✅ Seguro para clase / demos públicas | ❌ No permite gait/comportamientos custom |
-| ✅ Sport Mode tiene años de tuning | |
+| **Rock-solid**: el perro no se cae bajo comandos razonables | No es "sim2real" estricto: el `.pt` no llega al hardware |
+| Setup mínimo: cable Ethernet y enchufar el perro | Limitado a lo que Sport Mode expone (vx, vy, wz, StandUp, Sit, gestos predefinidos) |
+| Seguro para clase / demos públicas | No permite gait/comportamientos custom |
+| Sport Mode tiene años de tuning | |
 
 **Es lo que usa este repo por defecto.** Para la mayoría de proyectos
 (seguimiento YOLO, navegación, patrulla, etc.) es la opción correcta.
@@ -59,11 +59,11 @@ TU SCRIPT  →  set_velocity(vx, vy, wz)         (igual que sim)
 
 | Ventajas | Limitaciones |
 |---|---|
-| ✅ **Sim2real real**: tu RL training se valida en hardware | ❌ **Frágil**: tu policy puede caer en real igual que en sim si no aguanta el sim2real gap |
-| ✅ Permite gait/movimientos custom (parkour, marcha lateral rápida, etc.) | ❌ Requiere poner el Go2 en `debug mode` (`L2+R2`) — Sport Mode se apaga |
-| ✅ Es lo que hace la investigación seria de locomoción | ❌ Más pasos manuales, más riesgo si algo va mal |
-|  | ❌ Sin dominio randomization fuerte en training → el perro se cae |
-|  | ❌ Hay que compilar `go2_ctrl` (más complejidad) |
+| **Sim2real real**: tu RL training se valida en hardware | **Frágil**: tu policy puede caer en real igual que en sim si no aguanta el sim2real gap |
+| Permite gait/movimientos custom (parkour, marcha lateral rápida, etc.) | Requiere poner el Go2 en `debug mode` (`L2+R2`) — Sport Mode se apaga |
+| Es lo que hace la investigación seria de locomoción | Más pasos manuales, más riesgo si algo va mal |
+|  | Sin dominio randomization fuerte en training → el perro se cae |
+|  | Hay que compilar `go2_ctrl` (más complejidad) |
 
 **Este enfoque NO está cableado en `Go2Controller`.** Lo dejamos como
 extensión futura cuando se quiera demostrar sim2real puro o entrenar
@@ -104,7 +104,7 @@ dog = Go2Controller(mode="real", network="enp5s0")
 |---|---|---|
 | Backend | Publica `WirelessController_` por DDS al simulador | Llama a `SportClient.Move(vx, vy, wz)` |
 | Locomoción | Tu `.pt` entrenado en mjlab | **Sport Mode** (firmware on-board del Go2) |
-| `.pt` se usa | ✅ Sí | ❌ No |
+| `.pt` se usa | Sí | No |
 | Red | `lo` (loopback en WSL) | Ethernet directo al perro |
 
 ---
@@ -223,23 +223,23 @@ python examples/follow_reference.py \
 
 ### Lo que es IGUAL
 
-✅ La API (`set_velocity`, `stop`, `stand_up`, `sit`).
-✅ El código de tu aplicación (perception + lógica).
-✅ Las constantes (vx_max, deadzone, kp, etc.) suelen funcionar parecido.
+La API (`set_velocity`, `stop`, `stand_up`, `sit`).
+El código de tu aplicación (perception + lógica).
+Las constantes (vx_max, deadzone, kp, etc.) suelen funcionar parecido.
 
 ### Lo que CAMBIA
 
-⚠️ **Sport Mode es mucho más robusto** que la policy RL del sim. En real
+**Sport Mode es mucho más robusto** que la policy RL del sim. En real
 el perro NO se cae aunque le des comandos raros — el firmware compensa.
 
-⚠️ **Cámara**: en real lo natural es usar la **cámara on-board del Go2**
+**Cámara**: en real lo natural es usar la **cámara on-board del Go2**
 (no la webcam del laptop). Esto requiere suscribirse al stream de video
 por DDS. Ver "Cámara on-board" abajo.
 
-⚠️ **Latencia**: real puede tener más jitter (Ethernet vs loopback). Si
+**Latencia**: real puede tener más jitter (Ethernet vs loopback). Si
 ves comportamiento oscilante, baja las ganancias (`KP_YAW`, `KP_FORWARD`).
 
-⚠️ **Seguridad**: el perro pesa ~15 kg. Asume que cualquier comando
+**Seguridad**: el perro pesa ~15 kg. Asume que cualquier comando
 puede salir mal. Mantén una zona despejada y un botón de emergencia
 físico a mano.
 
@@ -322,7 +322,7 @@ make -j$(nproc)
 4. **Pulsar `L2 + A`** → entra en `damping` (motores flojos).
 5. **Pulsar `L2 + R2`** (la combinación exacta puede variar según versión de firmware) → entra en `debug mode`. Sport Mode queda suspendido. Ahora `rt/lowcmd` está activo y los motores aceptan tus comandos.
 
-> ⚠️ Una vez en debug mode, **cualquier comando torque/posición** que publiques a `rt/lowcmd` va directo a los motores. Asegurate de tener `go2_ctrl` ya configurado para publicar valores sensatos antes de entrar a este modo.
+> Una vez en debug mode, **cualquier comando torque/posición** que publiques a `rt/lowcmd` va directo a los motores. Asegurate de tener `go2_ctrl` ya configurado para publicar valores sensatos antes de entrar a este modo.
 
 ### 3. Lanzar `go2_ctrl`
 

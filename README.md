@@ -10,7 +10,7 @@
 
 ---
 
-## 🧩 ¿Qué incluye este repo?
+## ¿Qué incluye este repo?
 
 | Carpeta | Contenido |
 |---|---|
@@ -22,7 +22,7 @@
 
 ---
 
-## 🎯 ¿Qué hace el sistema?
+## ¿Qué hace el sistema?
 
 ```
 ┌──────────────────────────────────────────────┐
@@ -55,7 +55,7 @@ expuesto vía la SDK oficial de Unitree.
 
 ---
 
-## 🚀 Quick start
+## Quick start
 
 > Asume que ya tienes WSL2 Ubuntu 22.04 + el setup base de mjlab + un `.pt`
 > entrenado. Si empiezas de cero, lee primero [docs/INSTALL.md](docs/INSTALL.md).
@@ -103,7 +103,7 @@ python examples/patrol_and_alert.py
 
 ---
 
-## 📚 Documentación detallada
+## Documentación detallada
 
 | Doc | Para qué |
 |---|---|
@@ -114,7 +114,7 @@ python examples/patrol_and_alert.py
 
 ---
 
-## 🧪 Demos disponibles
+## Demos disponibles
 
 | Script | Concepto | Caso de uso |
 |---|---|---|
@@ -127,7 +127,7 @@ python examples/patrol_and_alert.py
 
 ---
 
-## 🔄 Sim → Real
+## Sim → Real
 
 Cuando hayas validado tu aplicación en simulador, **el mismo código corre
 en el robot físico**. Solo cambias dos parámetros:
@@ -139,7 +139,7 @@ dog = Go2Controller(mode="sim", network="lo")
 dog = Go2Controller(mode="real", network="enp5s0")
 ```
 
-> ⚠️ **Importante** — En `mode="real"` la locomoción la realiza el firmware
+> **Importante** — En `mode="real"` la locomoción la realiza el firmware
 > **Sport Mode** del Go2, NO tu `.pt` entrenado. Tu policy se usa en sim
 > para iterar la lógica; en real, Sport Mode (rock-solid) ejecuta los
 > comandos de velocidad. Esto es **lo deseable** para la mayoría de
@@ -152,7 +152,7 @@ Ver [docs/SIM_TO_REAL.md](docs/SIM_TO_REAL.md) para el procedimiento completo
 
 ---
 
-## 🛠️ Stack técnico
+## Stack técnico
 
 - **mjlab** (MuJoCo Warp) — simulador físico y framework RL
 - **rsl_rl** (PPO) — algoritmo de entrenamiento
@@ -163,7 +163,7 @@ Ver [docs/SIM_TO_REAL.md](docs/SIM_TO_REAL.md) para el procedimiento completo
 
 ---
 
-## 📜 Créditos
+## Créditos
 
 Este proyecto se apoya en y extiende:
 
